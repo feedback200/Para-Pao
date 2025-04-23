@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sacramento', cursive;
+  background-color: #f1e3d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+#card {
+  display: none;
+  flex-direction: column;
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  margin-top: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+#card h2 {
+  font-size: 2em;
+  margin: 0.5em;
+  color: pink;
+  text-align: center;
+}
+
+#card p {
+  font-size: 1.2em;
+  text-align: justify;
+  padding: 1em;
+}
+
+.side {
+  background: #eee;
+  padding: 1em;
+}
+
+.side.one {
+  display: none; /* ocultamos el decorado lateral en móviles */
+}
+
+.side.two {
+  background: #fff;
+}
+
+/* Sobre y corazón */
+.valentines-day {
+  position: relative;
+  cursor: pointer;
+  width: 90vw;
+  max-width: 300px;
+  margin: 1em auto;
+}
+
+.envelope {
+  width: 100%;
+  padding-top: 60%;
+  position: relative;
+}
+
+.envelope:before, .envelope:after,
+.front, .front:before, .front:after {
+  content: "";
+  position: absolute;
+  background-color: #ff9494;
+  border-radius: 0;
+}
+
+.envelope:before {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+  border-radius: 0 15px 0 0;
+  top: -50%;
+  left: 0;
+}
+
+.envelope:after {
+  width: 100%;
+  height: 60%;
+  top: 20%;
+  left: 0;
+}
+
+.heart {
+  position: absolute;
+  background-color: #e01911;
+  width: 60%;
+  aspect-ratio: 1;
+  left: 20%;
+  top: 30%;
+  transform: rotate(-45deg);
+  transition: .5s;
+}
+
+.heart:before, .heart:after {
+  content: "";
+  background-color: #e01911;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.heart:before {
+  top: -50%;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: 50%;
+}
+
+.front {
+  border-right: 50% solid #fbd2d2;
+  border-top: 30% solid transparent;
+  border-bottom: 30% solid transparent;
+  top: 20%;
+  left: 25%;
+}
+
+.front:before, .front:after {
+  display: none; /* Simplificamos para móviles */
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  left: 0;
+  text-align: center;
+  color: white;
+  font-size: 1.9em;
+  transition: .5s;
+}
+
+/* Hover para escritorio */
+@media (hover: hover) {
+  .valentines-day:hover .heart {
+    transform: translateY(-30px) rotate(-45deg);
+  }
+  .valentines-day:hover .text {
+    transform: translateY(-20px);
+  }
+}
